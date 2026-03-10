@@ -1,37 +1,37 @@
-# Functional Specification: Milan Audio Tour Creator
+# Specifica Funzionale: Creatore di Tour Audio per Milano
 
-## 1. Introduction
-This document outlines the functional requirements for the "Milan Audio Tour Creator" application. Its purpose is to provide a clear understanding of the application's core features, which allow tourists and event attendees in Milan to create personalized, AI-generated audio guides for their visit.
+## 1. Introduzione
+Questo documento delinea i requisiti funzionali per l'applicazione "Creatore di Tour Audio per Milano". Il suo scopo è fornire una chiara comprensione delle funzionalità principali, che permettono ai turisti e ai partecipanti agli eventi a Milano di creare audioguide personalizzate generate dall'IA per la loro visita. **NOTA IMPORTANTE:** Tutta l'interfaccia utente (UI) dell'applicazione e l'audio generato devono essere rigorosamente in lingua italiana.
 
-## 2. Goal
-The primary goal of the application is to enable users to input a list of landmarks, neighborhoods, or events in Milan they plan to visit, and automatically generate a cohesive, engaging audio tour guide covering those specific points of interest.
+## 2. Obiettivo Globale
+L'obiettivo principale dell'applicazione è consentire agli utenti di inserire un elenco di monumenti, quartieri o eventi a Milano che intendono visitare, e generare automaticamente un'audioguida coesa e coinvolgente che copra quegli specifici punti di interesse, completamente in lingua italiana.
 
-## 3. User Roles
-**Milan Visitor / Event Attendee**
-A user who is traveling to Milan (e.g., for Design Week or a weekend trip) and wants a personalized phonetic guide about specific locations without reading through heavy guidebooks.
+## 3. Ruoli Utente
+**Visitatore di Milano / Partecipante all'Evento**
+Un utente in viaggio a Milano (es. per la Design Week o un fine settimana) che desidera una guida vocale personalizzata in italiano su luoghi specifici, senza dover leggere pesanti guide cartacee.
 
-## 4. Key Features
+## 4. Funzionalità Chiave
 
-### 4.1 Itinerary Management
-*   **Add Point of Interest (POI):** Users shall be able to input the name of a Milan location (e.g., "Duomo di Milano", "Fondazione Prada", "Navigli") through the User Interface (UI).
-*   **View/Manage Itinerary:** Users shall be able to view their current list of added POIs. 
-*   **Remove POI:** Users shall be able to remove a location from their itinerary list.
+### 4.1 Gestione dell'Itinerario
+*   **Aggiungi Punto di Interesse (POI):** Gli utenti devono poter inserire il nome di un luogo di Milano (es. "Duomo di Milano", "Fondazione Prada", "Navigli") tramite l'Interfaccia Utente (UI).
+*   **Visualizza/Gestisci Itinerario:** Gli utenti devono poter visualizzare l'elenco attuale dei POI aggiunti.
+*   **Rimuovi POI:** Gli utenti devono poter rimuovere una località dal proprio elenco.
 
-### 4.2 Audio Tour Generation
-*   **Trigger Generation:** Users shall be able to initiate the generation of a new audio guide from their selected POIs via a dedicated UI action (e.g., a "Create My Tour" button).
-*   **Content Generation & Summarization:** The application will send the list of POIs to a Gemini LLM. Gemini will act as an expert Milanese tour guide, generating a summarized, engaging, and culturally rich script that smoothly transitions between the selected locations.
-*   **Audio Synthesis:** The generated tour script will be converted into natural-sounding speech using Google Cloud Text-to-Speech (Chirp/Journey voices).
-*   **Audio Compilation:** The synthesized speech will be compiled into a single audio file, complete with a warm Italian-style welcoming intro and a helpful outro.
+### 4.2 Generazione del Tour Audio
+*   **Avvio della Generazione:** Gli utenti devono poter avviare la generazione di una nuova audioguida dai POI selezionati tramite un'azione dedicata nell'UI (es. un pulsante "Crea il Mio Tour").
+*   **Generazione dei Contenuti e Riepilogo:** L'applicazione invierà l'elenco dei POI al modello Gemini LLM. Gemini agirà come una guida turistica milanese esperta, generando un copione riassuntivo, coinvolgente e ricco di cultura che passi in modo fluido tra i luoghi selezionati, **scritto interamente in italiano**.
+*   **Sintesi Vocale:** Il copione del tour generato verrà convertito in un discorso dal suono naturale utilizzando Google Cloud Text-to-Speech (utilizzando voci italiane Chirp/Journey, come `it-IT`).
+*   **Compilazione Audio:** Il discorso sintetizzato verrà compilato in un singolo file audio, completo di una calorosa introduzione e di una conclusione utile, sempre in italiano.
 
-### 4.3 Playback and Download
-*   **Tour Listing:** Users shall be able to view a list of their previously generated audio tours, including creation date.
-*   **Playback:** Users shall be able to play the generated audio tours directly within the application's UI.
-*   **Download:** Users shall be able to download the generated audio file to their local device to listen offline while walking around Milan.
+### 4.3 Riproduzione e Download
+*   **Elenco dei Tour:** Gli utenti devono poter visualizzare un elenco dei loro tour audio generati in precedenza, inclusa la data di creazione.
+*   **Riproduzione:** Gli utenti devono poter ascoltare i tour audio generati direttamente dall'interfaccia dell'applicazione.
+*   **Download:** Gli utenti devono poter scaricare il file audio generato sul proprio dispositivo per ascoltarlo offline mentre passeggiano per Milano.
 
-## 5. Non-Functional Considerations
-*   **Aesthetics:** The UI should have a premium, elegant design fitting the fashion and design capital of the world (Milan). It should feature high-quality imagery of Milan.
-*   **Responsiveness:** The application should provide clear loading states during the generation process, as LLM and TTS conversions take time.
+## 5. Considerazioni Non Funzionali
+*   **Estetica:** L'interfaccia utente deve avere un design elegante e premium, in linea con la capitale della moda e del design. Dovrebbe presentare un'immagine di background di alta qualità di Milano generata dall'IA. Tutta la testualità dell'app deve essere in italiano.
+*   **Reattività:** L'applicazione deve fornire chiari stati di caricamento durante il processo di generazione, poiché le conversioni LLM e TTS richiedono tempo.
 
-## 6. Data Storage Considerations
-*   **POIs:** The application will store the itinerary provided by the user only for the current session (e.g., in-memory or a local ephemeral JSON file).
-*   **Generated Audio Files:** Generated audio files will be stored locally on the server (e.g., the `public/tours` directory) for immediate download and playback.
+## 6. Considerazioni sull'Archiviazione dei Dati
+*   **POI:** L'applicazione memorizzerà l'itinerario fornito dall'utente solo per la sessione corrente (es. in memoria o in un file JSON locale temporaneo).
+*   **File Audio Generati:** I file audio generati saranno memorizzati localmente sul server (es. nella directory `public/tours`) per il download e la riproduzione immediata.
