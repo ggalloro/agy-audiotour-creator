@@ -29,7 +29,7 @@ Un utente in viaggio a Milano (es. per la Design Week o un fine settimana) che d
 *   **Download:** Gli utenti devono poter scaricare il file audio generato sul proprio dispositivo per ascoltarlo offline mentre passeggiano per Milano.
 
 ## 5. Considerazioni Non Funzionali
-*   **Estetica:** L'interfaccia utente deve avere un design elegante e premium, in linea con la capitale della moda e del design. Dovrebbe presentare un'immagine di background di alta qualità di Milano generata dall'IA. Tutta la testualità dell'app deve essere in italiano.
+*   **Estetica:** L'interfaccia utente deve avere un design elegante e premium, in linea con la capitale della moda e del design. Tutta la testualità dell'app deve essere in italiano.
 *   **Reattività:** L'applicazione deve fornire chiari stati di caricamento durante il processo di generazione, poiché le conversioni LLM e TTS richiedono tempo.
 
 ## 6. Considerazioni sull'Archiviazione dei Dati
