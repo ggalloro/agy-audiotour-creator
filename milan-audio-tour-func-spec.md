@@ -19,8 +19,8 @@ Un utente in viaggio a Milano (es. per la Design Week o un fine settimana) che d
 
 ### 4.2 Generazione del Tour Audio
 *   **Avvio della Generazione:** Gli utenti devono poter avviare la generazione di una nuova audioguida dai POI selezionati tramite un'azione dedicata nell'UI (es. un pulsante "Crea il Mio Tour").
-*   **Generazione dei Contenuti e Riepilogo:** L'applicazione invierà l'elenco dei POI al modello Gemini LLM. Gemini agirà come una guida turistica milanese esperta, generando un copione riassuntivo, coinvolgente e ricco di cultura che passi in modo fluido tra i luoghi selezionati, **scritto interamente in italiano**.
-*   **Sintesi Vocale:** Il copione del tour generato verrà convertito in un discorso dal suono naturale utilizzando Google Cloud Text-to-Speech (utilizzando voci italiane Chirp/Journey, come `it-IT`).
+*   **Generazione dei Contenuti e Riepilogo:** L'applicazione invierà l'elenco dei POI ad un LLM. L'LLM agirà come una guida turistica milanese esperta, generando un copione riassuntivo, coinvolgente e ricco di cultura che passi in modo fluido tra i luoghi selezionati, **scritto interamente in italiano**.
+*   **Sintesi Vocale:** Il copione del tour generato verrà convertito in un discorso dal suono naturale utilizzando un servizio di sintesi vocale (utilizzando voci italiane il più possibile simili a quelle di un essere umano).
 *   **Compilazione Audio:** Il discorso sintetizzato verrà compilato in un singolo file audio, completo di una calorosa introduzione e di una conclusione utile, sempre in italiano.
 
 ### 4.3 Riproduzione e Download
